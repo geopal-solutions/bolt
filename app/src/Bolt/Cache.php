@@ -16,7 +16,15 @@ class Cache extends \Doctrine\Common\Cache\FilesystemCache
      */
     private $cacheDir = "";
 
+    /**
+     *
+     */
     const DEFAULT_MAX_AGE = 600; // 10 minutes
+
+    /**
+     *
+     */
+    const DEFAULT_EXTENSION = '.boltcache.data';
 
     /**
      * Set up the object. Initialize the proper folder for storing the
@@ -33,7 +41,7 @@ class Cache extends \Doctrine\Common\Cache\FilesystemCache
         }
 
         try {
-            parent::__construct($this->cacheDir);
+            parent::__construct($this->cacheDir, self::DEFAULT_EXTENSION);
         } catch (\InvalidArgumentException $e) {
             echo $e->getMessage();
             die();
