@@ -59,6 +59,7 @@ class Cache extends \Doctrine\Common\Cache\FilesystemCache
      * @param $data
      * @param int $lifeTime
      * @return bool|int
+     * @deprecated
      */
     public function set($key, $data, $lifeTime = self::DEFAULT_MAX_AGE)
     {
@@ -91,6 +92,7 @@ class Cache extends \Doctrine\Common\Cache\FilesystemCache
      * @param $key
      * @param $maxage
      * @return bool
+     * @deprecated
      */
     public function isvalid($key, $maxage)
     {
@@ -100,6 +102,7 @@ class Cache extends \Doctrine\Common\Cache\FilesystemCache
     /**
      * @param $key
      * @return bool
+     * @deprecated
      */
     public function clear($key)
     {
